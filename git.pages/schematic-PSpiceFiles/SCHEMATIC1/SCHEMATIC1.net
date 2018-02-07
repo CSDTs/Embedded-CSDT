@@ -1,0 +1,6 @@
+* source SCHEMATIC
+V_V1         N00042 0 4Vdc
+R_R1         0 N00169  1k TC=0,0 
+R_R2         N00169 N00042  1k TC=0,0 
+R_R3         0 N00165  1k TC=0,0 
+R_R4         N00165 N00042  1k TC=0,0 
