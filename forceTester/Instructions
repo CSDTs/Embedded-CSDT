@@ -1,0 +1,23 @@
+The schematic 1 graph will be used as system to determine hair strength, and the flowchart is also attached. 
+The whole system consists of 6 parts: Arduino, Motor Shield, Stepper Motor, Hair, Strain Gauge and Wheatstone Bridge.
+
+The Arduino and Motor shield will work together to control the operation of stepper motor, and in this case, to exert force on the hair. 
+While force on the hair is applied and increasing, resistance of strain gauge will change, which will then affect the output voltage of 
+the Wheatstone Bridge. By reading Vout (The difference between V1 & V2), the resistance of strain gauge can be obtained, and based on the
+datasheet of strain gauge, we can conclude the force applied on the hair. 
+
+The formula of the Wheatstone Bridge is demonstrated below: 
+Since R1 & RSG (Resistance of strain gauge), R2 & R3 can form two pairs of voltage divider, V1 and V2 can be represented as:
+
+                V1=R3/(R2+R3)*Vin          V2=  RSG/(RSG+R1)*Vin
+
+In addition, since Vout=V1-V2, the only variable in this equation is RSG. By rewriting the equations, the relationship between RSG and
+Vout is:
+RSG=  (R1(R3*Vin-(R2+R3)*Vout))/(R2*Vin+(R2+R3)*Vout)
+
+In this way, from the strain gauge’s datasheet, we can obtain the values of force exerted on the hair based on the values of Vout.
+The strength to be measured are based on the 4 locations, which are:
+	Elastic Region
+	0.2% Offset Yield Strength
+	Maximum Withstand-able Stress
+	Failure or Fracture
