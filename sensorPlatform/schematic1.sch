@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.6.0">
+<eagle version="8.6.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -9,6 +9,20 @@
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
+<layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
+<layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
+<layer number="5" name="Route5" color="4" fill="4" visible="no" active="no"/>
+<layer number="6" name="Route6" color="1" fill="8" visible="no" active="no"/>
+<layer number="7" name="Route7" color="4" fill="8" visible="no" active="no"/>
+<layer number="8" name="Route8" color="1" fill="2" visible="no" active="no"/>
+<layer number="9" name="Route9" color="4" fill="2" visible="no" active="no"/>
+<layer number="10" name="Route10" color="1" fill="7" visible="no" active="no"/>
+<layer number="11" name="Route11" color="4" fill="7" visible="no" active="no"/>
+<layer number="12" name="Route12" color="1" fill="5" visible="no" active="no"/>
+<layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
+<layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
@@ -766,6 +780,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pin name="VCC" x="0" y="0" visible="off" length="short" direction="sup" rot="R90"/>
 <text x="0" y="2.794" size="1.778" layer="96" align="bottom-center">&gt;VALUE</text>
 </symbol>
+<symbol name="GND" urn="urn:adsk.eagle:symbol:39417/1" library_version="1">
+<description>&lt;h3&gt;Ground Supply (Earth Ground Symbol)&lt;/h3&gt;</description>
+<pin name="3.3V" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
+<wire x1="-2.032" y1="0" x2="2.032" y2="0" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="-0.762" x2="1.27" y2="-0.762" width="0.254" layer="94"/>
+<wire x1="-0.508" y1="-1.524" x2="0.508" y2="-1.524" width="0.254" layer="94"/>
+<text x="0" y="-1.778" size="1.778" layer="96" align="top-center">&gt;VALUE</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="VCC" urn="urn:adsk.eagle:component:39449/1" prefix="SUPPLY" library_version="1">
@@ -773,6 +795,20 @@ You are welcome to use this library for commercial purposes. For attribution, we
 &lt;p&gt;Positive voltage supply (traditionally for a BJT device, C=collector).&lt;/p&gt;</description>
 <gates>
 <gate name="G$1" symbol="VCC" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="GND2" urn="urn:adsk.eagle:component:39442/1" prefix="GND" library_version="1">
+<description>&lt;h3&gt;Ground Supply (Earth Ground style)&lt;/h3&gt;
+&lt;p&gt;Ground supply with a traditional "earth ground" symbol.&lt;/p&gt;</description>
+<gates>
+<gate name="G$1" symbol="GND" x="2.54" y="0"/>
 </gates>
 <devices>
 <device name="">
@@ -799,49 +835,65 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="MS1" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="FEATHERWING" device=""/>
 <part name="SUPPLY1" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCC" device=""/>
 <part name="SUPPLY2" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCC" device=""/>
-<part name="SUPPLY3" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCC" device=""/>
+<part name="GND1" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND2" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="20.32" y="88.9" size="1.778" layer="91">Pro Micro Arduino</text>
+<text x="27.94" y="-20.32" size="1.778" layer="91">Pro Micro Arduino</text>
 <text x="96.52" y="106.68" size="1.778" layer="91">Feather 32u4 FONA</text>
-<text x="58.42" y="12.7" size="1.778" layer="91">Solar Panel 6V 9W</text>
-<text x="81.28" y="-15.24" size="1.778" layer="91">Battery 3.7V</text>
-<text x="101.6" y="-15.24" size="1.778" layer="91">Battery 3.7V</text>
-<text x="25.4" y="-20.32" size="1.778" layer="91">Featherwing</text>
+<text x="7.62" y="25.4" size="1.778" layer="91">Solar Panel 6V 9W</text>
+<text x="25.4" y="53.34" size="1.778" layer="91">Featherwing</text>
+<text x="27.94" y="7.62" size="1.778" layer="91">Battery 7.4V</text>
 </plain>
 <instances>
-<instance part="B1" gate="G$1" x="27.94" y="66.04"/>
+<instance part="B1" gate="G$1" x="35.56" y="-40.64"/>
 <instance part="U$1" gate="G$1" x="104.14" y="55.88"/>
-<instance part="MS1" gate="G$1" x="5.08" y="-10.16"/>
-<instance part="SUPPLY1" gate="G$1" x="86.36" y="-10.16"/>
-<instance part="SUPPLY2" gate="G$1" x="68.58" y="5.08"/>
-<instance part="SUPPLY3" gate="G$1" x="106.68" y="-10.16"/>
+<instance part="MS1" gate="G$1" x="7.62" y="60.96"/>
+<instance part="SUPPLY1" gate="G$1" x="35.56" y="15.24"/>
+<instance part="SUPPLY2" gate="G$1" x="17.78" y="30.48"/>
+<instance part="GND1" gate="G$1" x="76.2" y="-22.86"/>
 </instances>
 <busses>
 </busses>
 <nets>
-<net name="VCC" class="0">
+<net name="N$1" class="0">
 <segment>
-<pinref part="MS1" gate="G$1" pin="3V"/>
-<wire x1="12.7" y1="-15.24" x2="12.7" y2="-33.02" width="0.1524" layer="91"/>
-<wire x1="12.7" y1="-33.02" x2="68.58" y2="-33.02" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="-40.64" x2="66.04" y2="-40.64" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="3.3V" class="0">
+<segment>
+<pinref part="MS1" gate="G$1" pin="GND"/>
+<wire x1="20.32" y1="55.88" x2="20.32" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="50.8" x2="76.2" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="50.8" x2="76.2" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="GND"/>
+<wire x1="76.2" y1="33.02" x2="81.28" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="33.02" x2="76.2" y2="-20.32" width="0.1524" layer="91"/>
+<junction x="76.2" y="33.02"/>
+<pinref part="GND1" gate="G$1" pin="3.3V"/>
+<wire x1="15.24" y1="88.9" x2="15.24" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="106.68" x2="73.66" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="106.68" x2="76.2" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="104.14" x2="76.2" y2="50.8" width="0.1524" layer="91"/>
+<junction x="76.2" y="50.8"/>
+</segment>
+</net>
+<net name="VBAT" class="0">
+<segment>
+<pinref part="MS1" gate="G$1" pin="VBAT"/>
+<wire x1="22.86" y1="99.06" x2="17.78" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="99.06" x2="5.08" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="99.06" x2="5.08" y2="12.7" width="0.1524" layer="91"/>
 <pinref part="SUPPLY2" gate="G$1" pin="VCC"/>
-<wire x1="68.58" y1="5.08" x2="68.58" y2="-12.7" width="0.1524" layer="91"/>
-<wire x1="68.58" y1="-12.7" x2="86.36" y2="-12.7" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="30.48" x2="17.78" y2="12.7" width="0.1524" layer="91"/>
 <pinref part="SUPPLY1" gate="G$1" pin="VCC"/>
-<wire x1="86.36" y1="-12.7" x2="86.36" y2="-10.16" width="0.1524" layer="91"/>
-<pinref part="SUPPLY3" gate="G$1" pin="VCC"/>
-<wire x1="86.36" y1="-12.7" x2="106.68" y2="-12.7" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="-12.7" x2="106.68" y2="-10.16" width="0.1524" layer="91"/>
-<junction x="86.36" y="-12.7"/>
-<pinref part="B1" gate="G$1" pin="VCC"/>
-<wire x1="68.58" y1="5.08" x2="68.58" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="68.58" y1="73.66" x2="40.64" y2="73.66" width="0.1524" layer="91"/>
-<junction x="68.58" y="5.08"/>
-<wire x1="68.58" y1="-33.02" x2="68.58" y2="-12.7" width="0.1524" layer="91"/>
-<junction x="68.58" y="-12.7"/>
+<wire x1="17.78" y1="12.7" x2="35.56" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="12.7" x2="35.56" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="12.7" x2="17.78" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="88.9" x2="17.78" y2="99.06" width="0.1524" layer="91"/>
+<junction x="17.78" y="99.06"/>
 </segment>
 </net>
 </nets>
